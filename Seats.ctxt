@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Seats
+comment1.params=
+comment1.target=Seats()
+comment2.params=
+comment2.target=boolean\ getLivre()
+comment3.params=
+comment3.target=boolean\ tomarAssento()
+comment4.params=seats
+comment4.target=int\ checkValue(Seats[][])
+numComments=5
