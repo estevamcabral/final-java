@@ -15,9 +15,9 @@ public class Aircraft
     public Aircraft() {
         this.seats = new Seats[23][4];
         for(int i= 0;i<seats.length;i++){
-            Seats assento= new Seats();
             for(int j= 0; j<4;j++){
-                seats[i][j]= assento;
+            Seats assento= new Seats();
+            seats[i][j]= assento;
             }
         }
     }
@@ -69,7 +69,7 @@ public class Aircraft
             } else {
                 next = column - 1;
             }
-            if (this.seats[line][next].getLivre()==false) {
+            if (this.seats[line][next].getLivre()==true) {
                 System.out.println("Deseja reservar o assento ao lado? (S/n)");
                 String confirm= sc.next();
                 if(confirm.startsWith("S")||confirm.startsWith("S")){

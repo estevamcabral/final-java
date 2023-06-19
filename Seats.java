@@ -7,9 +7,8 @@ public class Seats{
     public boolean getLivre(){
         return estaLivre;
     }
-    public boolean tomarAssento(){
+    public void tomarAssento(){
         estaLivre= false;
-        return estaLivre;
     }
     public int checkValue(Seats[][]seats){
         for(int i= 0;i<seats[i].length;i++){

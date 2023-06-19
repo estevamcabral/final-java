@@ -5,8 +5,8 @@ import java.time.format.DateTimeFormatter;
 public class AircraftApp
 {
     private AircraftApp() {
+        
     }
-    
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
        LocalDate today = LocalDate.now();
@@ -21,37 +21,42 @@ public class AircraftApp
         System.out.printf("[2]Porto Alegre--> São Paulo\n");
         System.out.printf("[3]Porto Alegre--> Recife\n");
         int destination= sc.nextInt();
+        sc.nextLine();
          String nameDestination="";
          String hour="";
          String numVoo="";
+         int pos= 0;
         if(destination==1){
             nameDestination= "Rio de Janeiro";
             hour= "06:30";
             numVoo= "TAM3434";
+            pos= 0;
         }
         if(destination==2){
             nameDestination= "São Paulo";
             hour= "08:45";
             numVoo= "TAM2173";
+            pos= 1;
         }
         if(destination==3){
             nameDestination= "Recife";
             hour= "19:30";
             numVoo= "TAM6060";
+            pos= 2;
         }
         System.out.println("Venda de passagens");
         String command;
         do {
             command= sc.nextLine();
             if (command.startsWith("show"))
-                destiny[0].print(nameDestination, hour,numVoo);
+                destiny[pos].print(nameDestination, hour,numVoo);
             else if (command.startsWith("sell"))                
-                destiny[0].sell(command);
+                destiny[pos].sell(command);
             else if (command.startsWith("write"))                
-                destiny[0].write(numVoo);
+                destiny[pos].write(numVoo);
             else if (command.startsWith("read"))                
-                destiny[0].read();
-            else
+                destiny[pos].read();
+            else if (!command.startsWith("show") && !command.startsWith("sell") &&!command.startsWith("write") && !command.startsWith("read"))
                 System.out.println("Comando invalido!");
             } while (!command.startsWith("quit"));
     }
