@@ -72,7 +72,7 @@ public class Aircraft
             if (this.seats[line][next].getLivre()==true) {
                 System.out.println("Deseja reservar o assento ao lado? (S/n)");
                 String confirm= sc.next();
-                if(confirm.startsWith("S")||confirm.startsWith("S")){
+                if(confirm.startsWith("S")||confirm.startsWith("s")){
                     this.seats[line][next].tomarAssento();
                 }
             }
