@@ -11,7 +11,7 @@ import java.io.FileInputStream;
  */
 public class Aircraft
 {
-    private Seats[][] seats;
+    private Seats[][] seats; 
     public Aircraft() {
         this.seats = new Seats[23][4];
         for(int i= 0;i<seats.length;i++){
@@ -23,7 +23,8 @@ public class Aircraft
     }
     
     public void sell(String command) {
-        Scanner sc= new Scanner(System.in);
+        for(int i= 0;i>=0;i++){
+            Scanner sc= new Scanner(System.in);
         System.out.println(command);
         String choice = command.substring(5);
         System.out.println(choice);
@@ -62,7 +63,8 @@ public class Aircraft
         if (this.seats[line][column].getLivre()== false)
             System.out.println("Assento OCUPADO!");
         else {
-            this.seats[line][column].tomarAssento();    
+            this.seats[line][column].tomarAssento(); 
+            this.seats[line][column].whoBuy();
             int next;
             if (column == 0 || column == 2) {
                 next = column + 1;
@@ -74,8 +76,15 @@ public class Aircraft
                 String confirm= sc.next();
                 if(confirm.startsWith("S")||confirm.startsWith("s")){
                     this.seats[line][next].tomarAssento();
+                    this.seats[line][next].whoBuy();
                 }
             }
+        }
+        System.out.println("Deseja comprar outro assento?");
+        String confirm2=sc.next();
+        if(confirm2.startsWith("N")||confirm2.startsWith("n")){
+                    break;
+        }
         }
     }
     public void print(String nameDestination,String hour,String numVoo) {
@@ -112,6 +121,15 @@ public class Aircraft
                     file.print(this.seats[i][j].getLivre() +" ");
             }
             file.println();
+        }
+        file.close();
+        PrintStream file2 = new PrintStream(new FileOutputStream("Passageiros.txt"));
+        for (int i = 0; i < this.seats.length; i++) {
+            for (int j = 0; j < this.seats[i].length; j++) {
+                    file2.print(this.seats[i][j].getCustomer());
+                    file2.print(this.seats[i][j].getCustomer());
+                }
+            file2.println();
         }
         file.close();
     }

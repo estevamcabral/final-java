@@ -1,8 +1,10 @@
 public class Seats{
     private boolean estaLivre= true;
     private int value;
+    private Passangers passageiro; 
+    String comprador= "0";
     public Seats(){
-        
+        passageiro = new Passangers();
     }
     public boolean getLivre(){
         return estaLivre;
@@ -27,4 +29,11 @@ public class Seats{
         }
         return value;
     }
+    public void whoBuy(){
+        comprador= passageiro.customer();
+    }
+    public String getCustomer(){
+        return comprador;
+    }
+    
 }
