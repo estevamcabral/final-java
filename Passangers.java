@@ -12,7 +12,9 @@ public class Passangers{
     public String nome;
     public String cpf;
 
+    public Passangers (){
 
+    }
     public static String getAssento(char letter, int number) {
         return String.valueOf(letter) + number;
     }

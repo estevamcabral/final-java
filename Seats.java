@@ -13,7 +13,7 @@ public class Seats{
     }
     //assento ocupado
     public void tomarAssento(){
-        estaLivre= false;
+        estaLivre=false;
     }
     //calcular valor da compra
     public double checkValue(int linha,int coluna,Seats[][]seats){

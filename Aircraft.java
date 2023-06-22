@@ -64,7 +64,7 @@ public class Aircraft
         if (this.seats[line][column].getLivre()== false)
             System.out.println("Assento OCUPADO!");
         else {
-            System.out.println("Digite seu nome: ");
+            System.out.println("Digite o nome do passageiro: ");
             passageiro.nome = sc.nextLine();
             System.out.println("Digite o CPF do passageiro:");
             passageiro.cpf = sc.nextLine();
@@ -141,7 +141,10 @@ public class Aircraft
         FileInputStream file = new FileInputStream(numVoo+".txt");
         Scanner in = new Scanner(file);
         for (int i = 0; i < this.seats.length; i++) {
-            for (int j = 0; j < this.seats[i].length; j++) {            
+            for (int j = 0; j < this.seats[i].length; j++) {
+                this.seats[i][j] = new Seats();
+                this.seats[i][j].tomarAssento();
+                System.out.println("esta lendo " + this.seats[i][j]);
             }
         }
         in.close();

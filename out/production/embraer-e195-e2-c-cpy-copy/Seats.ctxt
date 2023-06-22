@@ -1,11 +1,14 @@
 #BlueJ class context
 comment0.target=Seats
+comment0.text=\r\n\ AircraftApp\r\n\ @author\ estevamcabral1308@gmail.com\r\n\ @author\ fefe.franceschini@gmail.com\r\n
 comment1.params=
-comment1.target=Seats()
+comment1.target=boolean\ getLivre()
 comment2.params=
-comment2.target=boolean\ getLivre()
-comment3.params=
-comment3.target=boolean\ tomarAssento()
-comment4.params=seats
-comment4.target=int\ checkValue(Seats[][])
-numComments=5
+comment2.target=void\ tomarAssento()
+comment3.params=linha\ coluna\ seats
+comment3.target=double\ checkValue(int,\ int,\ Seats[][])
+comment4.params=
+comment4.target=void\ getBlocked()
+comment5.params=
+comment5.target=boolean\ getOcupado()
+numComments=6
