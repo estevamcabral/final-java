@@ -4,7 +4,6 @@ import java.io.FileInputStream;
 import java.util.Scanner;
 public class Passangers{
 
-    Scanner scan = new Scanner(System.in);
     public String nome;
     public String cpf;
 
@@ -14,14 +13,14 @@ public class Passangers{
     }
 
     public static void write(String numVoo, char letter, int number, String nome, String cpf) throws Exception{
-        PrintStream file = new PrintStream(new FileOutputStream("Passangers2.txt", true));
+        PrintStream file = new PrintStream(new FileOutputStream("Passangers.txt", true));
         file.print(numVoo + " " + getAssento(letter,number) + " " + nome + " " + cpf);
         file.println();
         file.close();
     }
     public static void read(String numVoo, String assento) throws Exception
     {
-        FileInputStream file2 = new FileInputStream("Passangers2.txt");
+        FileInputStream file2 = new FileInputStream("Passangers.txt");
         Scanner in = new Scanner(file2);
         String line="";
         while(in.hasNextLine()){
