@@ -51,7 +51,7 @@ public class AircraftApp
             if (command.startsWith("show"))
                 destiny[pos].print(nameDestination, hour,numVoo);
             else if (command.startsWith("sell"))                
-                destiny[pos].sell(command);
+                destiny[pos].sell(command, numVoo);
             else if (command.startsWith("write"))                
                 destiny[pos].write(numVoo);
             else if (command.startsWith("read"))                
