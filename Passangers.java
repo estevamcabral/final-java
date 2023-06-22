@@ -19,28 +19,23 @@ public class Passangers{
         file.println();
         file.close();
     }
-    public static void read(String numVoo, char letter, int number) throws Exception
+    public static void read(String numVoo, String assento) throws Exception
     {
         FileInputStream file2 = new FileInputStream("Passangers2.txt");
         Scanner in = new Scanner(file2);
         String line="";
         while(in.hasNextLine()){
             line = in.nextLine();
-            if(line.length()<=0){
+            if(line.startsWith(numVoo) && line.toLowerCase().contains(assento.toLowerCase())){
+                String[] parts = line.split(" ");
+                String nome = parts[2];
+                String cpf = parts[3];
+                System.out.println("Nome: " + nome);
+                System.out.println("CPF: " + cpf);
                 break;
-            }
-            else{
-                if(line.startsWith(numVoo) && line.contains(getAssento(letter, number))) {
-                    String[] parts = line.split(" ");
-                    String nome = parts[2];
-                    String cpf = parts[3];
-                    System.out.println("Nome: " + nome);
-                    System.out.println("CPF: " + cpf);
-                }
             }
         }
         in.close();
         file2.close();
     }
-
 }

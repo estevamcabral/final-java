@@ -54,6 +54,8 @@ public class AircraftApp
                 destiny[pos].sell(command, numVoo);
             else if (command.startsWith("write"))                
                 destiny[pos].write(numVoo);
+            else if (command.startsWith("whobuy"))
+                destiny[pos].whobuy(numVoo);
             else if (command.startsWith("read"))                
                 destiny[pos].read();
             else if (!command.startsWith("show") && !command.startsWith("sell") &&!command.startsWith("write") && !command.startsWith("read"))

@@ -71,7 +71,6 @@ public class Aircraft
 
             this.seats[line][column].tomarAssento();
             passageiro.write(numVoo, letter, number, passageiro.nome, passageiro.cpf);
-            passageiro.read(numVoo, letter, number);
             int next;
             if (column == 0 || column == 2) {
                 next = column + 1;
@@ -144,6 +143,9 @@ public class Aircraft
         file.close();            
     }
     public void whobuy(String numVoo) throws Exception {
-
+        Scanner sc = new Scanner(System.in);
+        System.out.println("DIGITE O ASSENTO PARA OBTER INFORMAÇÕES: ");
+        String assento = sc.next();
+        passageiro.read(numVoo, assento);
     }
 }
