@@ -46,18 +46,16 @@ public class AircraftApp
         }
         System.out.println("Venda de passagens");
         String command;
+        destiny[pos].read(numVoo);
         do {
+            destiny[pos].write(numVoo);
             command= sc.nextLine();
-            if (command.startsWith("show"))
+            if (command.startsWith("show Aircraft"))
                 destiny[pos].print(nameDestination, hour,numVoo);
             else if (command.startsWith("sell"))                
                 destiny[pos].sell(command, numVoo);
-            else if (command.startsWith("write"))                
-                destiny[pos].write(numVoo);
-            else if (command.startsWith("whobuy"))
+            else if (command.startsWith("show Customer"))
                 destiny[pos].whobuy(numVoo);
-            else if (command.startsWith("read"))                
-                destiny[pos].read();
             else if (!command.startsWith("show") && !command.startsWith("sell") &&!command.startsWith("write") && !command.startsWith("read"))
                 System.out.println("Comando invalido!");
             } while (!command.startsWith("quit"));

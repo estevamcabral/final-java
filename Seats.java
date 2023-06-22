@@ -1,6 +1,7 @@
 public class Seats{
     private boolean estaLivre= true;
-    private int value;
+    private boolean ocupado= false;
+    private double value;
 
     public boolean getLivre(){
         return estaLivre;
@@ -8,21 +9,48 @@ public class Seats{
     public void tomarAssento(){
         estaLivre= false;
     }
-    public int checkValue(Seats[][]seats){
-        for(int i= 0;i<seats[i].length;i++){
-            if(i<=1){
-                //primeira classe
-                value= 50000;
-            }
-            else if(i>=2 &&i<=7){
-                //classe executiva
-                value= 20000;
+    public double checkValue(int linha,int coluna,Seats[][]seats){
+        int nextColuna= 0;
+        if(coluna==0|| coluna== 2){
+           nextColuna= coluna+ 1; 
+        }
+        else{
+            nextColuna= coluna- 1;
+        }
+        if(seats[linha][nextColuna].getOcupado()==false){
+                if(linha<=1){
+                    //primeira classe
+                    value= 50000.00;
+                }
+                else if(linha>=2 && linha<=7){
+                    //classe executiva
+                    value= 20000.00;
+                }
+                else{
+                    //classe economica;
+                    value= 3000.00;
+                }
             }
             else{
-                //classe economica;
-                value= 3000;
+                if(linha<=1){
+                    //primeira classe
+                    value= 51200.00;
+                }
+                else if(linha>=2 && linha<=7){
+                    //classe executiva
+                    value= 20800.00;
+                }
+                else{
+                    //classe economica;
+                    value= 3060.00;
+                }
             }
-        }
         return value;
+    }
+    public void getBlocked(){
+        ocupado= true;
+    }
+    public boolean getOcupado(){
+        return ocupado;
     }
 }

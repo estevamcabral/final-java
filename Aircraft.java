@@ -24,7 +24,6 @@ public class Aircraft
     }
     
     public void sell(String command, String numVoo) throws Exception {
-        for(int i= 0;i>=0;i++){
             Scanner sc= new Scanner(System.in);
         System.out.println(command);
         String choice = command.substring(5);
@@ -85,12 +84,6 @@ public class Aircraft
                 }
             }
         }
-        System.out.println("Deseja comprar outro assento?");
-        String confirm2=sc.next();
-        if(confirm2.startsWith("N")||confirm2.startsWith("n")){
-                    break;
-        }
-        }
     }
     public void print(String nameDestination,String hour,String numVoo) {
         System.out.printf("POA ->%s\n", nameDestination);
@@ -119,7 +112,6 @@ public class Aircraft
         
     }
     public void write(String numVoo) throws Exception {
-        System.out.println(numVoo);
         PrintStream file = new PrintStream(new FileOutputStream(numVoo + ".txt"));
         for (int i = 0; i < this.seats.length; i++) {
             for (int j = 0; j < this.seats[i].length; j++) {
@@ -130,13 +122,11 @@ public class Aircraft
         file.close();
         file.close();
     }
-    
-    public void read() throws Exception {
-        FileInputStream file = new FileInputStream("seats.txt");
+    public void read(String numVoo) throws Exception {
+        FileInputStream file = new FileInputStream(numVoo+".txt");
         Scanner in = new Scanner(file);
         for (int i = 0; i < this.seats.length; i++) {
             for (int j = 0; j < this.seats[i].length; j++) {            
-                    //completar
             }
         }
         in.close();

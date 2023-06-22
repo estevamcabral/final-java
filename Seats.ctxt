@@ -1,15 +1,13 @@
 #BlueJ class context
 comment0.target=Seats
 comment1.params=
-comment1.target=Seats()
+comment1.target=boolean\ getLivre()
 comment2.params=
-comment2.target=boolean\ getLivre()
-comment3.params=
-comment3.target=void\ tomarAssento()
-comment4.params=seats
-comment4.target=int\ checkValue(Seats[][])
+comment2.target=void\ tomarAssento()
+comment3.params=linha\ coluna\ seats
+comment3.target=double\ checkValue(int,\ int,\ Seats[][])
+comment4.params=
+comment4.target=void\ getBlocked()
 comment5.params=
-comment5.target=void\ whoBuy()
-comment6.params=
-comment6.target=java.lang.String\ getCustomer()
-numComments=7
+comment5.target=boolean\ getOcupado()
+numComments=6
