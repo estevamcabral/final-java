@@ -25,7 +25,7 @@ public class Aircraft
     }
     
     //método sell(venda de assento)
-    public void sell(String command, String numVoo) throws Exception {
+    public void sell(String command, String numVoo)throws Exception{
         //determinando a linha e a coluna do arranjo a ser vendida
         Scanner sc= new Scanner(System.in);
         System.out.println(command);
