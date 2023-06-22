@@ -11,15 +11,15 @@ import java.io.FileInputStream;
 public class Aircraft
 {
     //criar objeto seats da classe Seats e objeto passageiro da classe Passangers
-    Passangers passenger = new Passangers();
+    Passangers passenger;
     private Seats[][] seats;
     public Aircraft() {
         this.seats = new Seats[23][4];
         for(int i= 0;i<seats.length;i++){
             for(int j= 0; j<4;j++){
             //transformando cada posição do arranjo seats em um objeto assento
-            Seats assento= new Seats();
-            seats[i][j]= assento;
+            Seats seat= new Seats();
+            seats[i][j]= seat;
             }
         }
     }
@@ -64,13 +64,11 @@ public class Aircraft
         if (this.seats[line][column].getLivre()== false)
             System.out.println("OCUPPIED SEAT!");
         else {
-            System.out.println("Enter name of the passenger:");
-            passenger.name = sc.nextLine();
-            System.out.println("Enter CPF of the passenger:");
-            passenger.cpf = sc.nextLine();
-
+            // cria um objeto passageiro apos realizar a compra, onde esta armazenando informacoes do mesmo.
+            // Passando para o construtor o numero do voo e o assento.
+            String seat = String.valueOf(letter) + number;
+            passenger = new Passangers(numVoo, seat);
             this.seats[line][column].takeSeat();
-            passenger.write(numVoo, letter, number, passenger.name, passenger.cpf);
             //verificar assento do lado pode ser reservado
             int next;
             if (column == 0 || column == 2) {
@@ -79,7 +77,7 @@ public class Aircraft
                 next = column - 1;
             }
             if (this.seats[line][next].getLivre()==true) {
-                System.out.println("whould you like book the seat on the side? (S/n)");
+                System.out.println("Whould you like book the seat on the side? (S/n)");
                 String confirm= sc.next();
                 if(confirm.startsWith("S")||confirm.startsWith("s")){
                     this.seats[line][next].takeSeat();

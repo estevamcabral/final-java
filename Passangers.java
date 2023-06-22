@@ -12,16 +12,17 @@ public class Passangers{
     public String name;
     public String cpf;
 
-    public Passangers (){
-
+    Scanner sc = new Scanner(System.in);
+    public Passangers (String numVoo, String seat) throws Exception{
+        System.out.println("Enter name of the passenger:");
+        this.name = sc.nextLine();
+        System.out.println("Enter CPF of the passenger:");
+        this.cpf = sc.nextLine();
+        write(numVoo, seat, name, cpf);
     }
-    public static String getAssento(char letter, int number) {
-        return String.valueOf(letter) + number;
-    }
-
-    public static void write(String numVoo, char letter, int number, String name, String cpf) throws Exception{
+    public void write(String numVoo, String seat, String name, String cpf) throws Exception{
         PrintStream file = new PrintStream(new FileOutputStream("Passangers.txt", true));
-        file.print(numVoo + " " + getAssento(letter,number) + " " + name + " " + cpf);
+        file.print(numVoo + " " + seat + " " + name + " " + cpf);
         file.println();
         file.close();
     }
@@ -36,12 +37,12 @@ public class Passangers{
                 String[] parts = line.split(" ");
                 String name = parts[2];
                 String cpf = parts[3];
-                System.out.println("Nome: " + name);
+                System.out.println("Name: " + name);
                 System.out.println("CPF: " + cpf);
                 break;
             }
             if(!in.hasNextLine()){
-                System.out.println("assento livre");
+                System.out.println("Seat is free!");
                 break;
             }
         }
