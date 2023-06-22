@@ -4,36 +4,36 @@ import java.io.PrintStream;
 import java.io.FileInputStream;
 
 /**
- * Revisão com objeto Aircraft.
- * 
+ * AircraftApp
+ * @author estevamcabral1308@gmail.com
  * @author fefe.franceschini@gmail.com
- * @see https://www.flyporter.com/en/about-porter/our-fleet/embraer-e195-e2
  */
 public class Aircraft
 {
+    //criar objeto seats da classe Seats e objeto passageiro da classe Passangers
     Passangers passageiro = new Passangers();
     private Seats[][] seats;
     public Aircraft() {
         this.seats = new Seats[23][4];
         for(int i= 0;i<seats.length;i++){
             for(int j= 0; j<4;j++){
+            //transformando cada posição do arranjo seats em um objeto assento
             Seats assento= new Seats();
             seats[i][j]= assento;
             }
         }
     }
     
+    //método sell(venda de assento)
     public void sell(String command, String numVoo) throws Exception {
-            Scanner sc= new Scanner(System.in);
+        //determinando a linha e a coluna do arranjo a ser vendida
+        Scanner sc= new Scanner(System.in);
         System.out.println(command);
         String choice = command.substring(5);
-        System.out.println(choice);
         
         char letter = choice.charAt(0);
-        System.out.println(letter);
         
-        int number = Integer.parseInt(choice.substring(1));        
-        System.out.println(number);
+        int number = Integer.parseInt(choice.substring(1));        ;
 
         int line;
         int column;
@@ -60,6 +60,7 @@ public class Aircraft
         }
         
         line = number - 1;
+        //verificar se está ocupado o assento ou não, usando o método getLivre()
         if (this.seats[line][column].getLivre()== false)
             System.out.println("Assento OCUPADO!");
         else {
@@ -70,6 +71,7 @@ public class Aircraft
 
             this.seats[line][column].tomarAssento();
             passageiro.write(numVoo, letter, number, passageiro.nome, passageiro.cpf);
+            //verificar assento do lado pode ser reservado
             int next;
             if (column == 0 || column == 2) {
                 next = column + 1;
@@ -81,27 +83,38 @@ public class Aircraft
                 String confirm= sc.next();
                 if(confirm.startsWith("S")||confirm.startsWith("s")){
                     this.seats[line][next].tomarAssento();
+                    this.seats[line][next].getBlocked();
                 }
             }
+            //printar valor da venda
+            System.out.println("Total:"+ seats[line][column].checkValue(line,column,seats));
         }
     }
-    public void print(String nameDestination,String hour,String numVoo) {
+    // método print(), printar os assentos da aeronave
+    public void print(String nameDestination,String hour,String numVoo){
         System.out.printf("POA ->%s\n", nameDestination);
         System.out.println(hour+ " " +numVoo);
         
         System.out.println("    A  B     C  D");      
         // percorre cada linha
         for (int i = 0; i < this.seats.length; i++) {
-            // mostra uma linha matriz
+            // mostra uma linha matriz e verificar se esta livre ou ocupada ou bloqueado
             System.out.printf("%2d ", i + 1);
             for (int j = 0; j < this.seats[i].length; j++) {            
-                if (this.seats[i][j].getLivre()== false)
-                    System.out.print("[O]");
-                else
-                    System.out.print("[ ]");
-                if (j == 1) {
-                    System.out.print("   ");
+                if(this.seats[i][j].getOcupado()== true){
+                    System.out.print("[X]");
                 }
+                else{
+                    if (this.seats[i][j].getLivre()== false){
+                      System.out.print("[O]");  
+                    }
+                    else{
+                        System.out.print("[ ]");
+                    }
+                }
+                if (j == 1) {
+                        System.out.print("   ");
+                    }
             }
             System.out.printf(" %2d%n", i + 1);
             if (i == 1 || i == 7) {
@@ -111,6 +124,7 @@ public class Aircraft
         System.out.println("    A  B     C  D");      
         
     }
+    //método write(), escrever no arquivo do voo se os assentos estao livres ou ocupados(true or false)
     public void write(String numVoo) throws Exception {
         PrintStream file = new PrintStream(new FileOutputStream(numVoo + ".txt"));
         for (int i = 0; i < this.seats.length; i++) {
@@ -122,6 +136,7 @@ public class Aircraft
         file.close();
         file.close();
     }
+    //método read(), ler no inicio do programa o arquivo do voo
     public void read(String numVoo) throws Exception {
         FileInputStream file = new FileInputStream(numVoo+".txt");
         Scanner in = new Scanner(file);

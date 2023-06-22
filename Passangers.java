@@ -2,6 +2,11 @@ import java.io.PrintStream;
 import java.io.FileOutputStream;
 import java.io.FileInputStream;
 import java.util.Scanner;
+/**
+ * AircraftApp
+ * @author estevamcabral1308@gmail.com
+ * @author fefe.franceschini@gmail.com
+ */
 public class Passangers{
 
     public String nome;
@@ -31,6 +36,10 @@ public class Passangers{
                 String cpf = parts[3];
                 System.out.println("Nome: " + nome);
                 System.out.println("CPF: " + cpf);
+                break;
+            }
+            if(!in.hasNextLine()){
+                System.out.println("assento livre");
                 break;
             }
         }

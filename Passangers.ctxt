@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Passangers
+comment0.text=\r\n\ AircraftApp\r\n\ @author\ estevamcabral1308@gmail.com\r\n\ @author\ fefe.franceschini@gmail.com\r\n
 comment1.params=letter\ number
 comment1.target=java.lang.String\ getAssento(char,\ int)
 comment2.params=numVoo\ letter\ number\ nome\ cpf

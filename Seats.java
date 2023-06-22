@@ -1,14 +1,21 @@
+/**
+ * AircraftApp
+ * @author estevamcabral1308@gmail.com
+ * @author fefe.franceschini@gmail.com
+ */
 public class Seats{
     private boolean estaLivre= true;
-    private boolean ocupado= false;
+    private boolean bloqueado= false;
     private double value;
-
+    //retorna se esta livre ou ocupado o assento
     public boolean getLivre(){
         return estaLivre;
     }
+    //assento ocupado
     public void tomarAssento(){
         estaLivre= false;
     }
+    //calcular valor da compra
     public double checkValue(int linha,int coluna,Seats[][]seats){
         int nextColuna= 0;
         if(coluna==0|| coluna== 2){
@@ -47,10 +54,13 @@ public class Seats{
             }
         return value;
     }
+    //assento bloqueado
     public void getBlocked(){
-        ocupado= true;
+        bloqueado= true;
+        estaLivre= false;
     }
+    //retornar se o assento esta bloqueado ou não
     public boolean getOcupado(){
-        return ocupado;
+        return bloqueado;
     }
 }

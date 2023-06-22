@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Aircraft
-comment0.text=\r\n\ Revis\u00E3o\ com\ objeto\ Aircraft.\r\n\ \r\n\ @author\ fefe.franceschini@gmail.com\r\n\ @see\ https\://www.flyporter.com/en/about-porter/our-fleet/embraer-e195-e2\r\n
+comment0.text=\r\n\ AircraftApp\r\n\ @author\ estevamcabral1308@gmail.com\r\n\ @author\ fefe.franceschini@gmail.com\r\n
 comment1.params=
 comment1.target=Aircraft()
 comment2.params=command\ numVoo

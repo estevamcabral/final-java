@@ -2,19 +2,23 @@ import java.util.Scanner;
 import java.time.LocalDate;
 import java.time.Instant;
 import java.time.format.DateTimeFormatter;
+
+/**
+ * AircraftApp
+ * @author estevamcabral1308@gmail.com
+ * @author fefe.franceschini@gmail.com
+ */
 public class AircraftApp
 {
-    private AircraftApp() {
-        
-    }
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception{
         Scanner sc = new Scanner(System.in);
-       LocalDate today = LocalDate.now();
+        LocalDate today = LocalDate.now();
+        //vetor avião, 3 destinos diferentes
         Aircraft[] destiny = new Aircraft[3];
         destiny[0]= new Aircraft();
         destiny[1]= new Aircraft();
         destiny[2]= new Aircraft();
-        
+        // selecionar destino
         System.out.println("Qual seu destino?");
         System.out.println("dia:"+ today.toString());
         System.out.printf("[1]Porto Alegre--> Rio de Janeiro\n");
@@ -44,11 +48,18 @@ public class AircraftApp
             numVoo= "TAM6060";
             pos= 2;
         }
-        System.out.println("Venda de passagens");
         String command;
+        //lendo o arquivo do voo escolhido
         destiny[pos].read(numVoo);
+        //menu
         do {
+            System.out.println("MENU:");
+            System.out.println("1. show Aircraft");
+            System.out.println("2. sell (seat)");
+            System.out.println("3. show Customer");
+            //escreve no arquivo do voo os assentos comprados 
             destiny[pos].write(numVoo);
+            //inserir comando e chamar os métodos da classe Aircraft
             command= sc.nextLine();
             if (command.startsWith("show Aircraft"))
                 destiny[pos].print(nameDestination, hour,numVoo);
