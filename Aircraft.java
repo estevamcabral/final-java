@@ -142,9 +142,9 @@ public class Aircraft
         Scanner in = new Scanner(file);
         for (int i = 0; i < this.seats.length; i++) {
             for (int j = 0; j < this.seats[i].length; j++) {
-                this.seats[i][j] = new Seats();
-                this.seats[i][j].tomarAssento();
-                System.out.println("esta lendo " + this.seats[i][j]);
+                if (in.nextBoolean() == false){
+                    this.seats[i][j].tomarAssento();
+                }
             }
         }
         in.close();
