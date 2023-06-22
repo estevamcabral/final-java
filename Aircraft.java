@@ -11,7 +11,8 @@ import java.io.FileInputStream;
  */
 public class Aircraft
 {
-    private Seats[][] seats; 
+    Passangers passageiro = new Passangers();
+    private Seats[][] seats;
     public Aircraft() {
         this.seats = new Seats[23][4];
         for(int i= 0;i<seats.length;i++){
@@ -22,7 +23,7 @@ public class Aircraft
         }
     }
     
-    public void sell(String command) {
+    public void sell(String command, String numVoo) throws Exception {
         for(int i= 0;i>=0;i++){
             Scanner sc= new Scanner(System.in);
         System.out.println(command);
@@ -63,8 +64,13 @@ public class Aircraft
         if (this.seats[line][column].getLivre()== false)
             System.out.println("Assento OCUPADO!");
         else {
-            this.seats[line][column].tomarAssento(); 
-            this.seats[line][column].whoBuy();
+            System.out.println("Digite seu nome: ");
+            passageiro.nome = sc.nextLine();
+            System.out.println("Digite o CPF do passageiro:");
+            passageiro.cpf = sc.nextLine();
+
+            this.seats[line][column].tomarAssento();
+            passageiro.write(numVoo, letter, number, passageiro.nome, passageiro.cpf);
             int next;
             if (column == 0 || column == 2) {
                 next = column + 1;
@@ -76,7 +82,6 @@ public class Aircraft
                 String confirm= sc.next();
                 if(confirm.startsWith("S")||confirm.startsWith("s")){
                     this.seats[line][next].tomarAssento();
-                    this.seats[line][next].whoBuy();
                 }
             }
         }
@@ -123,14 +128,6 @@ public class Aircraft
             file.println();
         }
         file.close();
-        PrintStream file2 = new PrintStream(new FileOutputStream("Passageiros.txt"));
-        for (int i = 0; i < this.seats.length; i++) {
-            for (int j = 0; j < this.seats[i].length; j++) {
-                    file2.print(this.seats[i][j].getCustomer());
-                    file2.print(this.seats[i][j].getCustomer());
-                }
-            file2.println();
-        }
         file.close();
     }
     
@@ -145,5 +142,10 @@ public class Aircraft
         in.close();
         file.close();            
     }
-
+    public void whobuy(String numVoo) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("DIGITE O ASSENTO PARA OBTER INFORMAÇÕES: ");
+        String assento = sc.next();
+        passageiro.read(numVoo, assento);
+    }
 }
