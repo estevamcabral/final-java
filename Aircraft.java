@@ -11,7 +11,7 @@ import java.io.FileInputStream;
 public class Aircraft
 {
     //criar objeto seats da classe Seats e objeto passageiro da classe Passangers
-    Passangers passageiro = new Passangers();
+    Passangers passenger = new Passangers();
     private Seats[][] seats;
     public Aircraft() {
         this.seats = new Seats[23][4];
@@ -62,15 +62,15 @@ public class Aircraft
         line = number - 1;
         //verificar se está ocupado o assento ou não, usando o método getLivre()
         if (this.seats[line][column].getLivre()== false)
-            System.out.println("Assento OCUPADO!");
+            System.out.println("OCUPPIED SEAT!");
         else {
-            System.out.println("Digite o nome do passageiro: ");
-            passageiro.nome = sc.nextLine();
-            System.out.println("Digite o CPF do passageiro:");
-            passageiro.cpf = sc.nextLine();
+            System.out.println("Enter the name of the passanger:");
+            passenger.name = sc.nextLine();
+            System.out.println("Enter the CPF of the passanger:");
+            passenger.cpf = sc.nextLine();
 
-            this.seats[line][column].tomarAssento();
-            passageiro.write(numVoo, letter, number, passageiro.nome, passageiro.cpf);
+            this.seats[line][column].takeSeat();
+            passenger.write(numVoo, letter, number, passenger.name, passenger.cpf);
             //verificar assento do lado pode ser reservado
             int next;
             if (column == 0 || column == 2) {
@@ -79,11 +79,11 @@ public class Aircraft
                 next = column - 1;
             }
             if (this.seats[line][next].getLivre()==true) {
-                System.out.println("Deseja reservar o assento ao lado? (S/n)");
+                System.out.println("whould you like book the seat on the side? (S/n)");
                 String confirm= sc.next();
                 if(confirm.startsWith("S")||confirm.startsWith("s")){
-                    this.seats[line][next].tomarAssento();
-                    this.seats[line][next].getBlocked();
+                    this.seats[line][next].takeSeat();
+                    this.seats[line][next].Blocked();
                 }
             }
             //printar valor da venda
@@ -101,7 +101,7 @@ public class Aircraft
             // mostra uma linha matriz e verificar se esta livre ou ocupada ou bloqueado
             System.out.printf("%2d ", i + 1);
             for (int j = 0; j < this.seats[i].length; j++) {            
-                if(this.seats[i][j].getOcupado()== true){
+                if(this.seats[i][j].getBlocked()== true){
                     System.out.print("[X]");
                 }
                 else{
@@ -143,17 +143,18 @@ public class Aircraft
         for (int i = 0; i < this.seats.length; i++) {
             for (int j = 0; j < this.seats[i].length; j++) {
                 if (in.nextBoolean() == false){
-                    this.seats[i][j].tomarAssento();
+                    this.seats[i][j].takeSeat();
                 }
             }
         }
         in.close();
         file.close();            
     }
+    //método whoBuy(), mostra quem comprou o assento
     public void whobuy(String numVoo) throws Exception {
         Scanner sc = new Scanner(System.in);
-        System.out.println("DIGITE O ASSENTO PARA OBTER INFORMAÇÕES: ");
-        String assento = sc.next();
-        passageiro.read(numVoo, assento);
+        System.out.println("Enter the seat for informations:");
+        String whichSeat= sc.next();
+        passenger.read(numVoo, whichSeat);
     }
 }

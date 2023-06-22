@@ -19,7 +19,7 @@ public class AircraftApp
         destiny[1]= new Aircraft();
         destiny[2]= new Aircraft();
         // selecionar destino
-        System.out.println("Qual seu destino?");
+        System.out.println("What is your destiny?");
         System.out.println("dia:"+ today.toString());
         System.out.printf("[1]Porto Alegre--> Rio de Janeiro\n");
         System.out.printf("[2]Porto Alegre--> São Paulo\n");
@@ -68,7 +68,7 @@ public class AircraftApp
             else if (command.startsWith("show Customer"))
                 destiny[pos].whobuy(numVoo);
             else if (!command.startsWith("show") && !command.startsWith("sell") &&!command.startsWith("write") && !command.startsWith("read"))
-                System.out.println("Comando invalido!");
+                System.out.println("Invalid command!");
             } while (!command.startsWith("quit"));
     }
 }

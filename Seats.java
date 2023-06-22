@@ -4,27 +4,27 @@
  * @author fefe.franceschini@gmail.com
  */
 public class Seats{
-    private boolean estaLivre= true;
-    private boolean bloqueado= false;
+    private boolean seatIsFree= true;
+    private boolean blocked= false;
     private double value;
     //retorna se esta livre ou ocupado o assento
     public boolean getLivre(){
-        return estaLivre;
+        return seatIsFree;
     }
     //assento ocupado
-    public void tomarAssento(){
-        estaLivre=false;
+    public void takeSeat(){
+        seatIsFree=false;
     }
     //calcular valor da compra
     public double checkValue(int linha,int coluna,Seats[][]seats){
-        int nextColuna= 0;
+        int nextColumn= 0;
         if(coluna==0|| coluna== 2){
-           nextColuna= coluna+ 1; 
+           nextColumn= coluna+ 1; 
         }
         else{
-            nextColuna= coluna- 1;
+            nextColumn= coluna- 1;
         }
-        if(seats[linha][nextColuna].getOcupado()==false){
+        if(seats[linha][nextColumn].getBlocked()==false){
                 if(linha<=1){
                     //primeira classe
                     value= 50000.00;
@@ -55,12 +55,12 @@ public class Seats{
         return value;
     }
     //assento bloqueado
-    public void getBlocked(){
-        bloqueado= true;
-        estaLivre= false;
+    public void Blocked(){
+        blocked= true;
+        seatIsFree= false;
     }
     //retornar se o assento esta bloqueado ou não
-    public boolean getOcupado(){
-        return bloqueado;
+    public boolean getBlocked(){
+        return blocked;
     }
 }
