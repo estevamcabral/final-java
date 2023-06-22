@@ -64,9 +64,9 @@ public class Aircraft
         if (this.seats[line][column].getLivre()== false)
             System.out.println("OCUPPIED SEAT!");
         else {
-            System.out.println("Enter the name of the passanger:");
+            System.out.println("Enter name of the passenger:");
             passenger.name = sc.nextLine();
-            System.out.println("Enter the CPF of the passanger:");
+            System.out.println("Enter CPF of the passenger:");
             passenger.cpf = sc.nextLine();
 
             this.seats[line][column].takeSeat();
@@ -153,7 +153,7 @@ public class Aircraft
     //método whoBuy(), mostra quem comprou o assento
     public void whobuy(String numVoo) throws Exception {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the seat for informations:");
+        System.out.println("Enter seat for informations:");
         String whichSeat= sc.next();
         passenger.read(numVoo, whichSeat);
     }
