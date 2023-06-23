@@ -15,4 +15,4 @@ USER INSTRUCTIONS: Run AircraftApp.java and follow the instructions:
 Select the desired flight.
 Type "show Aircraft" to display the status of the seats.
 Type "sell a1" to sell a seat (where "a1" is an example seat).
-Type "whobuy" to display a menu where you can enter the seat number and, if there is a buyer, it will show their information.
+Type "show Customer" to display a menu where you can enter the seat number and, if there is a buyer, it will show their information.

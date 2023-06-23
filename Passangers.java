@@ -43,7 +43,7 @@ public class Passangers{
      */
     public void write(String numVoo, String seat, String name, String cpf) throws Exception{
         PrintStream file = new PrintStream(new FileOutputStream("Passangers.txt", true));
-        file.print(numVoo + " " + seat + " " + name + " " + cpf);
+        file.print(numVoo + "/" + seat + "/" + name + "/" + cpf);
         file.println();
         file.close();
     }
@@ -61,7 +61,7 @@ public class Passangers{
         while(in.hasNextLine()){
             line = in.nextLine();
             if(line.startsWith(numVoo) && line.toLowerCase().contains(whichSeat.toLowerCase())){
-                String[] parts = line.split(" ");
+                String[] parts = line.split("/");
                 String name = parts[2];
                 String cpf = parts[3];
                 System.out.println("Name: " + name);
