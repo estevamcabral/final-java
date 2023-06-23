@@ -81,7 +81,7 @@ public class Aircraft {
             System.out.println("OCCUPIED SEAT!");
         else {
             String seat = String.valueOf(letter) + number;
-            passenger = new Passangers(numVoo, seat);
+            this.passenger = new Passangers(numVoo, seat);
             this.seats[line][column].takeSeat();
 
             int next;

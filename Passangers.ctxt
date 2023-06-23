@@ -1,12 +1,13 @@
 #BlueJ class context
 comment0.target=Passangers
-comment0.text=\r\n\ AircraftApp\r\n\ @author\ estevamcabral1308@gmail.com\r\n\ @author\ fefe.franceschini@gmail.com\r\n
-comment1.params=
-comment1.target=Passangers()
-comment2.params=letter\ number
-comment2.target=java.lang.String\ getAssento(char,\ int)
-comment3.params=numVoo\ letter\ number\ name\ cpf
-comment3.target=void\ write(java.lang.String,\ char,\ int,\ java.lang.String,\ java.lang.String)
-comment4.params=numVoo\ whichSeat
-comment4.target=void\ read(java.lang.String,\ java.lang.String)
-numComments=5
+comment0.text=\r\n\ Passangers\ representa\ um\ passageiro\ que\ comprou\ um\ assento\ em\ um\ voo.\r\n\ Armazena\ o\ nome\ e\ CPF\ do\ passageiro.\r\n\ Permite\ escrever\ e\ ler\ as\ informa\u00E7\u00F5es\ dos\ passageiros\ em\ um\ arquivo.\r\n\ @author\ estevamcabral1308@gmail.com\ -\ 23108553\r\n\ @author\ fefe.franceschini@gmail.com\ -\ 23102302\r\n
+comment1.params=numVoo\ seat
+comment1.target=Passangers(java.lang.String,\ java.lang.String)
+comment1.text=\r\n\ Construtor\ da\ classe\ Passangers.\r\n\ Solicita\ o\ nome\ e\ CPF\ do\ passageiro\ e\ escreve\ as\ informa\u00E7\u00F5es\ em\ um\ arquivo.\r\n\ @param\ numVoo\ o\ n\u00FAmero\ do\ voo.\r\n\ @param\ seat\ o\ assento\ comprado\ pelo\ passageiro.\r\n\ @throws\ Exception\ em\ caso\ de\ erro\ ao\ escrever\ no\ arquivo.\r\n
+comment2.params=numVoo\ seat\ name\ cpf
+comment2.target=void\ write(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment2.text=\r\n\ M\u00E9todo\ para\ escrever\ as\ informa\u00E7\u00F5es\ do\ passageiro\ em\ um\ arquivo.\r\n\ @param\ numVoo\ o\ n\u00FAmero\ do\ voo.\r\n\ @param\ seat\ o\ assento\ comprado\ pelo\ passageiro.\r\n\ @param\ name\ o\ nome\ do\ passageiro.\r\n\ @param\ cpf\ o\ CPF\ do\ passageiro.\r\n\ @throws\ Exception\ em\ caso\ de\ erro\ ao\ escrever\ no\ arquivo.\r\n
+comment3.params=numVoo\ whichSeat
+comment3.target=void\ read(java.lang.String,\ java.lang.String)
+comment3.text=\r\n\ M\u00E9todo\ est\u00E1tico\ para\ ler\ as\ informa\u00E7\u00F5es\ de\ um\ passageiro\ a\ partir\ do\ n\u00FAmero\ do\ voo\ e\ assento.\r\n\ @param\ numVoo\ o\ n\u00FAmero\ do\ voo.\r\n\ @param\ whichSeat\ o\ assento\ a\ ser\ consultado.\r\n\ @throws\ Exception\ em\ caso\ de\ erro\ ao\ ler\ o\ arquivo.\r\n
+numComments=4

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=AircraftApp
-comment0.text=\r\n\ AircraftApp\r\n\ @author\ estevamcabral1308@gmail.com\r\n\ @author\ fefe.franceschini@gmail.com\r\n
+comment0.text=\r\n\ Os\ usu\u00E1rios\ podem\ selecionar\ um\ destino\ e\ realizar\ a\u00E7\u00F5es\ como\ visualizar\ informa\u00E7\u00F5es\ do\ voo,\r\n\ comprar\ assentos\ e\ visualizar\ os\ passageiros\ que\ compraram\ assentos.\r\n\ Esta\ classe\ cria\ uma\ inst\u00E2ncia\ de\ avi\u00E3o\ para\ cada\ destino\ dispon\u00EDvel.\r\n\ @author\ estevamcabral1308@gmail.com\ -\ 23108553\r\n\ @author\ fefe.franceschini@gmail.com\ -\ 23102302\r\n
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
 numComments=2

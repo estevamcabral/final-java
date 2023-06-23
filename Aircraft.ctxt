@@ -1,16 +1,22 @@
 #BlueJ class context
 comment0.target=Aircraft
-comment0.text=\r\n\ AircraftApp\r\n\ @author\ estevamcabral1308@gmail.com\r\n\ @author\ fefe.franceschini@gmail.com\r\n
+comment0.text=\r\n\ Aircraft\ representa\ uma\ aeronave\ com\ assentos\ para\ venda.\r\n\ Os\ assentos\ s\u00E3o\ organizados\ em\ um\ arranjo\ bidimensional.\r\n\ Os\ assentos\ podem\ ser\ vendidos,\ exibiddos\ e\ bloqueados\ e\ ocupados.\r\n\ Os\ dados\ dos\ passageiros\ que\ compraram\ assentos\ podem\ ser\ armazenados\ e\ consultados.\r\n\ Os\ assentos\ e\ informa\u00E7\u00F5es\ de\ venda\ podem\ ser\ gravados\ e\ lidos\ em\ um\ arquivo.\r\n\ @author\ estevamcabral1308@gmail.com\ -\ 23108553\r\n\ @author\ fefe.franceschini@gmail.com\ -\ 23102302\r\n
 comment1.params=
 comment1.target=Aircraft()
+comment1.text=\r\n\ Construtor\ da\ classe\ Aircraft.\r\n\ Inicializa\ o\ arranjo\ de\ assentos\ da\ aeronave.\r\n
 comment2.params=command\ numVoo
 comment2.target=void\ sell(java.lang.String,\ java.lang.String)
+comment2.text=\r\n\ M\u00E9todo\ para\ vender\ um\ assento\ da\ aeronave.\r\n\ Verifica\ se\ o\ assento\ est\u00E1\ ocupado\ ou\ livre.\r\n\ Cria\ um\ objeto\ de\ passageiro\ e\ armazena\ as\ informa\u00E7\u00F5es\ do\ mesmo\ ap\u00F3s\ a\ compra.\r\n\ Verifica\ se\ o\ assento\ ao\ lado\ pode\ ser\ reservado.\r\n\ Imprime\ o\ valor\ total\ da\ venda.\r\n\r\n\ @param\ command\ o\ comando\ de\ venda\ do\ assento.\r\n\ @param\ numVoo\ \ o\ n\u00FAmero\ do\ voo.\r\n\ @throws\ Exception\ em\ caso\ de\ erro\ ao\ ler\ a\ entrada\ do\ usu\u00E1rio.\r\n
 comment3.params=nameDestination\ hour\ numVoo
 comment3.target=void\ print(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment3.text=\r\n\ M\u00E9todo\ para\ exibir\ os\ assentos\ da\ aeronave.\r\n\ Imprime\ a\ disposi\u00E7\u00E3o\ dos\ assentos,\ indicando\ se\ est\u00E3o\ livres,\ ocupados\ ou\ bloqueados.\r\n\r\n\ @param\ nameDestination\ o\ destino\ do\ voo.\r\n\ @param\ hour\ a\ hora\ do\ voo.\r\n\ @param\ numVoo\ o\ n\u00FAmero\ do\ voo.\r\n
 comment4.params=numVoo
 comment4.target=void\ write(java.lang.String)
+comment4.text=\r\n\ M\u00E9todo\ para\ escrever\ no\ arquivo\ do\ voo\ o\ status\ dos\ assentos\ (livres\ ou\ ocupados).\r\n\r\n\ @param\ numVoo\ o\ n\u00FAmero\ do\ voo.\r\n\ @throws\ Exception\ em\ caso\ de\ erro\ ao\ escrever\ no\ arquivo.\r\n
 comment5.params=numVoo
 comment5.target=void\ read(java.lang.String)
+comment5.text=\r\n\ M\u00E9todo\ para\ ler\ o\ arquivo\ do\ voo\ e\ restaurar\ o\ status\ dos\ assentos.\r\n\r\n\ @param\ numVoo\ o\ n\u00FAmero\ do\ voo.\r\n\ @throws\ Exception\ em\ caso\ de\ erro\ ao\ ler\ o\ arquivo.\r\n
 comment6.params=numVoo
 comment6.target=void\ whobuy(java.lang.String)
+comment6.text=\r\n\ M\u00E9todo\ para\ mostrar\ as\ informa\u00E7\u00F5es\ do\ passageiro\ que\ comprou\ um\ assento\ espec\u00EDfico.\r\n\r\n\ @param\ numVoo\ o\ n\u00FAmero\ do\ voo.\r\n\ @throws\ Exception\ em\ caso\ de\ erro\ ao\ ler\ a\ entrada\ do\ usu\u00E1rio.\r\n
 numComments=7
