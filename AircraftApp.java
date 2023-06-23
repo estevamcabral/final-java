@@ -1,12 +1,16 @@
 import java.util.Scanner;
 import java.time.LocalDate;
-import java.time.Instant;
-import java.time.format.DateTimeFormatter;
+
 
 /**
  * AircraftApp
  * @author estevamcabral1308@gmail.com
  * @author fefe.franceschini@gmail.com
+ */
+/**
+ * Os usuários podem selecionar um destino e realizar ações como visualizar informações do voo,
+ * comprar assentos e visualizar os passageiros que compraram assentos.
+ * Esta classe cria uma instância de avião para cada destino disponível.
  */
 public class AircraftApp
 {
@@ -20,7 +24,7 @@ public class AircraftApp
         destiny[2]= new Aircraft();
         // selecionar destino
         System.out.println("What is your destiny?");
-        System.out.println("dia:"+ today.toString());
+        System.out.println("Date: "+ today.toString());
         System.out.printf("[1]Porto Alegre--> Rio de Janeiro\n");
         System.out.printf("[2]Porto Alegre--> São Paulo\n");
         System.out.printf("[3]Porto Alegre--> Recife\n");
