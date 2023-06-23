@@ -2,9 +2,10 @@
  * Seats representa um assento em uma aeronave.
  * Armazena informações sobre se o assento está livre ou ocupado, se está bloqueado e o valor da compra do assento.
  * Permite verificar o estado do assento, ocupá-lo, calcular o valor da compra e bloqueá-lo.
- * @author estevamcabral1308@gmail.com
- * @author fefe.franceschini@gmail.com
+ * @author estevamcabral1308@gmail.com - 23108553
+ * @author fefe.franceschini@gmail.com - 23102302
  */
+
 public class Seats{
     private boolean seatIsFree = true;
     private boolean blocked = false;

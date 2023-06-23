@@ -1,17 +1,14 @@
 import java.util.Scanner;
 import java.time.LocalDate;
 
-
-/**
- * AircraftApp
- * @author estevamcabral1308@gmail.com
- * @author fefe.franceschini@gmail.com
- */
 /**
  * Os usuários podem selecionar um destino e realizar ações como visualizar informações do voo,
  * comprar assentos e visualizar os passageiros que compraram assentos.
  * Esta classe cria uma instância de avião para cada destino disponível.
+ * @author estevamcabral1308@gmail.com - 23108553
+ * @author fefe.franceschini@gmail.com - 23102302
  */
+
 public class AircraftApp
 {
     public static void main(String[] args) throws Exception{

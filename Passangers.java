@@ -7,9 +7,10 @@ import java.util.Scanner;
  * Passangers representa um passageiro que comprou um assento em um voo.
  * Armazena o nome e CPF do passageiro.
  * Permite escrever e ler as informações dos passageiros em um arquivo.
- * @author estevamcabral1308@gmail.com
- * @author fefe.franceschini@gmail.com
+ * @author estevamcabral1308@gmail.com - 23108553
+ * @author fefe.franceschini@gmail.com - 23102302
  */
+
 public class Passangers{
 
     public String name;

@@ -4,16 +4,15 @@ import java.io.PrintStream;
 import java.util.Scanner;
 
 /**
- * @author estevamcabral1308@gmail.com
- * @author fefe.franceschini@gmail.com
- */
-/**
  * Aircraft representa uma aeronave com assentos para venda.
  * Os assentos são organizados em um arranjo bidimensional.
  * Os assentos podem ser vendidos, exibiddos e bloqueados e ocupados.
  * Os dados dos passageiros que compraram assentos podem ser armazenados e consultados.
  * Os assentos e informações de venda podem ser gravados e lidos em um arquivo.
+ * @author estevamcabral1308@gmail.com - 23108553
+ * @author fefe.franceschini@gmail.com - 23102302
  */
+
 public class Aircraft {
     Passangers passenger;
     private Seats[][] seats;
